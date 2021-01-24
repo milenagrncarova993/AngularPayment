@@ -12,13 +12,13 @@
                     </div>
                     <div class="input-field col s6">
                         <input type="text" class="validate" name="CardHolder" #CardHolder="ngModel" [(ngModel)]="card.CardHolder" required>
-                        <label> Card Holder</label>
+                        <label data-error="Required Filed!"> Card Holder</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
                         <input type="text" class="validate" name="ExpirationDate" #ExpirationDate="ngModel" [(ngModel)]="card.ExpirationDate" required>
-                        <label> Expiration Date</label>
+                        <label data-error="Required Filed!"> Expiration Date</label>
                     </div>
                     <div class="input-field col s6">
                         <input type="text" name="SecurityCode" #SecurityCode="ngModel" [(ngModel)]="card.SecurityCode">
@@ -28,7 +28,7 @@
                 <div class="row">
                     <div class="input-field col s6">
                         <input type="text" class="validate" name="Amount" #Amount="ngModel" [(ngModel)]="card.Amount" required>
-                        <label> Amount </label>
+                        <label data-error="Required Filed!"> Amount </label>
                     </div>
                 </div>
                 <div class = "row">
