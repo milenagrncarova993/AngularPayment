@@ -4,6 +4,39 @@
             <div class="sm-jumbotron center-align">
                 <h2>Payment</h2>
             </div>
+            <form class="col s12 white" #PaymentCardForm="ngForm">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input type="text" name="CreditCardNumber" #CreditCardNumber="ngModel" [(ngModel)]="card.CreditCardNumber">
+                        <label> Credit Card Number</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" name="CardHolder" #CardHolder="ngModel" [(ngModel)]="card.CardHolder">
+                        <label> Card Holder</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input type="text" name="ExpirationDate" #ExpirationDate="ngModel" [(ngModel)]="card.ExpirationDate">
+                        <label> Expiration Date</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" name="SecurityCode" #SecurityCode="ngModel" [(ngModel)]="card.SecurityCode">
+                        <label> Security Code</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input type="text" name="Amount" #Amount="ngModel" [(ngModel)]="card.Amount">
+                        <label> Amount </label>
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class="input-field col s12">
+                        <button class="btn-large btn-submit" type="submit">Submit</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
