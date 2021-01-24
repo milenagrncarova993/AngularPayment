@@ -7,17 +7,17 @@
             <form class="col s12 white" #PaymentCardForm="ngForm">
                 <div class="row">
                     <div class="input-field col s6">
-                        <input type="text" name="CreditCardNumber" #CreditCardNumber="ngModel" [(ngModel)]="card.CreditCardNumber">
-                        <label> Credit Card Number</label>
+                        <input type="text" class="validate" name="CreditCardNumber" #CreditCardNumber="ngModel" [(ngModel)]="card.CreditCardNumber" required>
+                        <label data-error="Required Filed!"> Credit Card Number</label>
                     </div>
                     <div class="input-field col s6">
-                        <input type="text" name="CardHolder" #CardHolder="ngModel" [(ngModel)]="card.CardHolder">
+                        <input type="text" class="validate" name="CardHolder" #CardHolder="ngModel" [(ngModel)]="card.CardHolder" required>
                         <label> Card Holder</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <input type="text" name="ExpirationDate" #ExpirationDate="ngModel" [(ngModel)]="card.ExpirationDate">
+                        <input type="text" class="validate" name="ExpirationDate" #ExpirationDate="ngModel" [(ngModel)]="card.ExpirationDate" required>
                         <label> Expiration Date</label>
                     </div>
                     <div class="input-field col s6">
@@ -27,7 +27,7 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <input type="text" name="Amount" #Amount="ngModel" [(ngModel)]="card.Amount">
+                        <input type="text" class="validate" name="Amount" #Amount="ngModel" [(ngModel)]="card.Amount" required>
                         <label> Amount </label>
                     </div>
                 </div>

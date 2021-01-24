@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Card } from '../shared/card.model';
+import { NgForm } from '@angular/forms';
+
 @Component({
   selector: 'app-payment-form',
   templateUrl: './payment-form.component.html',
@@ -11,6 +13,18 @@ export class PaymentFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.resetForm();
   }
-
+resetForm(form?:NgForm)
+{
+  if (form != null)
+form.reset();
+this.card= {
+  CreditCardNumber:'',
+  CardHolder:'',
+  ExpirationDate:'',
+  SecurityCode:'',
+  Amount:''
+}
+}
 }

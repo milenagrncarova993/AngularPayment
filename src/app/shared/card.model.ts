@@ -1,7 +1,7 @@
 export class Card {
     CreditCardNumber:string;
     CardHolder:string;
-    ExpirationDate:Date;
+    ExpirationDate:string;
     SecurityCode:string;
-    Amount:number;
+    Amount:string;
 }
