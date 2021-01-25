@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Card } from '../shared/card.model';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-payment-form',
@@ -18,7 +19,7 @@ export class PaymentFormComponent implements OnInit {
   Amount: string;
 
   result:string
-  constructor(private http:HttpClient) {}
+  constructor(private http:HttpClient,private toastr:ToastrService) {}
 
   postData(){
     let url = "http://httpbin.org/post"

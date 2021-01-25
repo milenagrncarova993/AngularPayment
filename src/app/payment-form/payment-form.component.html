@@ -4,7 +4,7 @@
             <div class="sm-jumbotron center-align">
                 <h3>Payment details</h3>
             </div>
-            <form class="col s12 white" #PaymentCardForm="ngForm">
+            <form class="col s12 white" #PaymentCardForm="ngForm" (ngSubmit)="onSubmit(UserPaymentFrom)">
                 <div class="row">
                     <div class="input-field col s6">
                         <input type="text" class="validate" name="CreditCardNumber" #CreditCardNumber="ngModel" [(ngModel)]="card.CreditCardNumber" required>
