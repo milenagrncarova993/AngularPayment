@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Card } from '../shared/card.model';
 import { NgForm } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-payment-form',
@@ -10,7 +11,25 @@ import { NgForm } from '@angular/forms';
 export class PaymentFormComponent implements OnInit {
    
   card: Card;
-  constructor() { }
+  CreditCardNumber:string;
+  CardHolder:string;
+  ExpirationDate: string;
+  SecurityCode: string;
+  Amount: string;
+
+  result:string
+  constructor(private http:HttpClient) {}
+
+  postData(){
+    let url = "http://httpbin.org/post"
+    this.http.post(url,{
+      CreditCardNumber:this.CreditCardNumber
+    }).toPromise().then((data:any) => {
+      console.log(data)
+      console.log(JSON.stringify(data.json.card.CreditCardName))
+      this.result = JSON.stringify(data.json.card.CreditCardNumber)
+    })
+  }
 
   ngOnInit(): void {
     this.resetForm();
