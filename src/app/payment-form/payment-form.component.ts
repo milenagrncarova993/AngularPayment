@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Card } from '../shared/card.model';
 import { NgForm } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
+import { CardService } from '../shared/card.service'
 
 @Component({
   selector: 'app-payment-form',
@@ -12,25 +12,10 @@ import { ToastrService } from 'ngx-toastr';
 export class PaymentFormComponent implements OnInit {
    
   card: Card;
-  CreditCardNumber:string;
-  CardHolder:string;
-  ExpirationDate: string;
-  SecurityCode: string;
-  Amount: string;
 
-  result:string
-  constructor(private http:HttpClient,private toastr:ToastrService) {}
+  constructor(private CardService:CardService ,private toastr:ToastrService) {}
 
-  postData(){
-    let url = "http://httpbin.org/post"
-    this.http.post(url,{
-      CreditCardNumber:this.CreditCardNumber
-    }).toPromise().then((data:any) => {
-      console.log(data)
-      console.log(JSON.stringify(data.json.card.CreditCardName))
-      this.result = JSON.stringify(data.json.card.CreditCardNumber)
-    })
-  }
+ 
 
   ngOnInit(): void {
     this.resetForm();
@@ -47,4 +32,18 @@ this.card= {
   Amount:''
 }
 }
+
+onSubmit(form:ngFrom)
+this.CardService.paymentCard(form.value)
+.subscribe((data:any)=>{
+  if(data.Succeeded == true)
+  {
+    this.resetForm(form);
+    this.toastr.success('User Registration Successful');
+  }
+  else
+  {
+    this.toastr.error(data.Errors[0]);
+  }
+})
 }
