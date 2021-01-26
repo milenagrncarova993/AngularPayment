@@ -33,12 +33,12 @@
                 </div>
                 <div class = "row">
                     <div class="input-field col s12">
-                        <button (click)="onSuccess('Payment done')" class="btn-large btn-submit" [disabled]="!PaymentCardForm.valid" type="submit">Submit</button>
+                        <button (click)="postData()" class="btn-large btn-submit" [disabled]="!PaymentCardForm.valid" type="submit">Submit</button>
+                        <br>
+                        <p>Your payment was successful with Credit Card Number {{result}}.</p>
                     </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
-
-<simple-notification></simple-notification>
