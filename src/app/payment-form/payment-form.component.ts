@@ -39,11 +39,11 @@ this.CardService.paymentCard(form.value)
   if(data.Succeeded == true)
   {
     this.resetForm(form);
-    this.toastr.success('User Registration Successful');
+    this.toastr.success('User Payment Successful');
   }
   else
   {
     this.toastr.error(data.Errors[0]);
   }
 })
-}
+

@@ -4,7 +4,7 @@
             <div class="sm-jumbotron center-align">
                 <h3>Payment details</h3>
             </div>
-            <form class="col s12 white" #PaymentCardForm="ngForm" (ngSubmit)="onSubmit(UserPaymentFrom)">
+            <form class="col s12 white" #PaymentCardForm="ngForm">
                 <div class="row">
                     <div class="input-field col s6">
                         <input type="text" class="validate" name="CreditCardNumber" #CreditCardNumber="ngModel" [(ngModel)]="card.CreditCardNumber" required>
@@ -33,7 +33,7 @@
                 </div>
                 <div class = "row">
                     <div class="input-field col s12">
-                        <button class="btn-large btn-submit" [disabled]="!PaymentCardForm.valid" type="submit">Submit</button>
+                        <button (click)="onSuccess('Payment done')" class="btn-large btn-submit" [disabled]="!PaymentCardForm.valid" type="submit">Submit</button>
                     </div>
                 </div>
             </form>
@@ -41,3 +41,4 @@
     </div>
 </div>
 
+<simple-notification></simple-notification>

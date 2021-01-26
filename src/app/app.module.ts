@@ -8,7 +8,6 @@ import { PaymentFormComponent } from './payment-form/payment-form.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import { BrowserAnimationModule} from '@angular/platform-browser/animations';
 import {ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -22,7 +21,6 @@ import {ToastrModule } from 'ngx-toastr';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationModule,
     ToastrModule.forRoot()
 
   ],
